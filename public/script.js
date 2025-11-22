@@ -107,18 +107,6 @@ async function api(action, data = {}) {
   }).then(r => r.json());
 }
 
-window.addEventListener('load', async () => {
-  try {
-    await fetch('/api/validate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'app_opened' })
-    });
-  } catch (err) {
-    console.error('App init failed', err);
-  }
-});
-
 // Auth function
 async function authenticate() {
   const org = orgInput.value.trim();
